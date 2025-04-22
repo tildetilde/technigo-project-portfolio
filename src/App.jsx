@@ -1,8 +1,28 @@
-export const App = () => {
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./GlobalStyle";
+import { theme } from "./theme";
+import Hero from "./components/Hero";
+import Skills from "./components/Skills";
+import Projects from "./components/Projects";
+import Tech from "./components/Tech";
+import Journey from "./components/Journey";
+import Contact from "./components/Contact";
+import Layout from "./components/Layout";
+
+function App() {
   return (
-    <>
-      <h1>Portfolio</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem, laborum! Maxime animi nostrum facilis distinctio neque labore consectetur beatae eum ipsum excepturi voluptatum, dicta repellendus incidunt fugiat, consequatur rem aperiam.</p>
-    </>
-  )
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Layout>
+        <Hero />
+        <Skills />
+        <Projects />
+        <Tech />
+        <Journey />
+        <Contact />
+      </Layout>
+    </ThemeProvider>
+  );
 }
+
+export default App;
