@@ -110,9 +110,9 @@ const Hero = () => {
         <HeroName>This is Tilde Egebrand</HeroName>
         <HeroTitle>Frontend Developer</HeroTitle>
         <HeroDescription>
-          Tilde is not skilled yet, but shaping fast — driven by curiosity and
-          caffeine. She doesn’t have many answers, but she’s learning to ask
-          better questions. That’s a start.
+          Tilde is not very skilled yet, but shaping fast. She's driven by
+          curiosity and caffeine. She doesn’t have many answers, but she’s
+          learning to ask better questions. That’s a start.
         </HeroDescription>
         <SocialIcons>
           <SocialIcon href="#" aria-label="LinkedIn">

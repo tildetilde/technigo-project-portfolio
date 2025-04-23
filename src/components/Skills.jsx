@@ -6,23 +6,25 @@ const SkillsSection = styled.section`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 32px;
+  font-size: 60px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 40px;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+    font-size: 80px;
+  }
 `;
 
 const SkillsGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 30px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-template-columns: repeat(1, 1fr);
+  justify-content: center;
+  gap: 24px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Flexible columns for desktop */
+    justify-content: center;
   }
 `;
 
@@ -30,6 +32,8 @@ const SkillCategory = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  box-sixing: border-box;
   border-right: 2px solid ${(props) => props.theme.colors.primary};
 
   &:nth-child(4) {
@@ -58,17 +62,6 @@ const CategoryTitle = styled.h3`
   margin-bottom: 20px;
   position: relative;
   padding-bottom: 10px;
-
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 40px;
-    height: 2px;
-    background-color: ${(props) => props.theme.colors.primary};
-  }
 `;
 
 const SkillsList = styled.ul`
