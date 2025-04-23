@@ -9,7 +9,7 @@ export const theme = {
   },
   breakpoints: {
     mobile: "480px",
-    tablet: "700px",
+    tablet: "744px",
     desktop: "1024px",
   },
   fonts: {
