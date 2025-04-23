@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 
 const StyledLayout = styled.div`
   max-width: 1200px;
@@ -12,10 +12,10 @@ const StyledLayout = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     padding: 0 60px;
   }
-`
+`;
 
 const Layout = ({ children }) => {
-  return <StyledLayout>{children}</StyledLayout>
-}
+  return <StyledLayout>{children}</StyledLayout>;
+};
 
-export default Layout
+export default Layout;

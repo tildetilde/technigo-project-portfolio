@@ -8,8 +8,12 @@ export const theme = {
     background: "#FFFFFF",
   },
   breakpoints: {
-    mobile: "576px",
-    tablet: "768px",
+    mobile: "480px",
+    tablet: "700px",
     desktop: "1024px",
   },
-}
+  fonts: {
+    body: "'Poppins', sans-serif",
+    heading: "'Urbanist', sans-serif",
+  },
+};
