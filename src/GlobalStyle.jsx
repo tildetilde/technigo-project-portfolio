@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,9 +12,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: ${(props) => props.theme.fonts.body};
     line-height: 1.5;
-    color: #333;
+    color: ${(props) => props.theme.colors.text};
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: ${(props) => props.theme.fonts.heading};
   }
 
   a {
@@ -38,6 +42,6 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     font-family: inherit;
   }
-`
+`;
 
-export default GlobalStyle
+export default GlobalStyle;
