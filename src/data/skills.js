@@ -1,6 +1,17 @@
 export const skills = {
-  Code: ["HTML5", "CSS3", "JavaScript ES6", "React", "Styled Components", "GitHub"],
-  Toolbox: ["Atom", "Postman", "Adobe Photoshop", "Adobe Illustrator", "Figma", "Keynote", "Slack"],
-  Upcoming: ["Node.js"],
-  More: ["Branding", "Strategy", "Process Design", "Concept", "Documentation", "Agile methodology"],
-}
+  Code: ["HTML5", "CSS3", "JavaScript (ES6+)", "React", "Styled Components"],
+  Toolbox: [
+    "Responsive Design",
+    "CSS Libraries",
+    "Git & GitHub",
+    "Chrome DevTools",
+    "Figma",
+  ],
+  Upcoming: ["Node.js", "Express.js", "MongDB", "Ruby on Rails"],
+  More: [
+    "Accessibility",
+    "Problem-Solving & Debugging",
+    "Component Architecture",
+    "Working with APIs & Promises",
+  ],
+};
