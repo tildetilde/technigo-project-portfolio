@@ -1,16 +1,12 @@
 import styled from "styled-components";
 
 const StyledLayout = styled.div`
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 0 20px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    padding: 0 40px;
-  }
+  padding: 0 24px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    padding: 0 60px;
+    padding: 0 128px;
   }
 `;
 

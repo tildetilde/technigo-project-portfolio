@@ -9,7 +9,8 @@ const HeroSection = styled.section`
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 80px;
     padding: 80px 0;
   }
 `;
@@ -75,6 +76,7 @@ const ProfileImageWrapper = styled.div`
   position: relative;
   width: 433px;
   height: 433px;
+  flex: 0 0 auto;
   margin: 0 auto;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
@@ -86,6 +88,7 @@ const ProfileImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
 `;
 
