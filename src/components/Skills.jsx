@@ -2,29 +2,24 @@ import styled from "styled-components";
 import { skills } from "../data/skills";
 
 const SkillsSection = styled.section`
-  padding: 60px 0;
+  padding: 80px 0;
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 60px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
-
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    font-size: 80px;
-  }
+  margin-bottom: 60px;
 `;
 
 const SkillsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   justify-content: center;
-  gap: 24px;
+  gap: 40px;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    grid-template-columns: repeat(4, 1fr); /* Flexible columns for desktop */
-    justify-content: center;
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    grid-template-columns: repeat(4, 1fr);
   }
 `;
 
@@ -33,14 +28,14 @@ const SkillCategory = styled.div`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  box-sixing: border-box;
+  padding: 0 20px;
   border-right: 2px solid ${(props) => props.theme.colors.primary};
 
   &:nth-child(4) {
     border-right: none;
   }
 
-  @media (max-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     border-right: none;
     border-bottom: 2px solid ${(props) => props.theme.colors.primary};
     padding-bottom: 30px;
@@ -57,7 +52,7 @@ const SkillCategory = styled.div`
 `;
 
 const CategoryTitle = styled.h3`
-  font-size: 18px;
+  font-size: 1.25rem;
   font-weight: 600;
   margin-bottom: 20px;
   position: relative;
@@ -66,11 +61,19 @@ const CategoryTitle = styled.h3`
 
 const SkillsList = styled.ul`
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 `;
 
 const SkillItem = styled.li`
-  margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 const Skills = () => {
