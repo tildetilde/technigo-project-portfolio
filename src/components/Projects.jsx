@@ -1,96 +1,115 @@
-import styled from "styled-components"
-import { projects } from "../data/projects"
+import styled from "styled-components";
+import { projects } from "../data/projects";
 
 const ProjectsSection = styled.section`
-  padding: 60px 0;
-`
+  padding: 80px 0;
+`;
 
 const SectionTitle = styled.h2`
-  font-size: 32px;
+  font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
   text-align: center;
-  margin-bottom: 40px;
-`
+  margin-bottom: 60px;
+`;
 
 const ProjectsGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   gap: 30px;
-  
+
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     grid-template-columns: repeat(4, 1fr);
   }
-`
+`;
 
-const ProjectCard = styled.div`
-  border-radius: 8px;
+const ProjectCard = styled.article`
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
-  
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   }
-`
+
+  &:focus-within {
+    outline: 2px solid ${(props) => props.theme.colors.primary};
+    transform: translateY(-8px);
+  }
+`;
 
 const ProjectImage = styled.img`
   width: 100%;
   height: 200px;
   object-fit: cover;
-`
+`;
 
 const ProjectContent = styled.div`
   padding: 20px;
-`
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+`;
 
 const ProjectTitle = styled.h3`
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 500;
   margin-bottom: 10px;
-`
+`;
 
 const ProjectDescription = styled.p`
-  font-size: 14px;
+  font-size: 0.875rem;
   color: ${(props) => props.theme.colors.lightText};
   margin-bottom: 20px;
-`
+  flex-grow: 1;
+`;
 
 const ProjectButtons = styled.div`
   display: flex;
   gap: 10px;
-`
+  margin-top: auto;
+`;
 
 const Button = styled.a`
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 8px 16px;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 6px;
+  font-size: 0.875rem;
   font-weight: 500;
   text-align: center;
   transition: all 0.2s ease;
-`
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.primary};
+    outline-offset: 2px;
+  }
+`;
 
 const PrimaryButton = styled(Button)`
   background-color: ${(props) => props.theme.colors.primary};
   color: white;
-  
+
   &:hover {
-    background-color: #e05e00;
+    transform: translateY(-3px);
   }
-`
+`;
 
 const SecondaryButton = styled(Button)`
   border: 1px solid ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.primary};
-  
+
   &:hover {
-    background-color: rgba(255, 107, 0, 0.1);
+    transform: translateY(-3px);
   }
-`
+`;
 
 const Projects = () => {
   return (
@@ -104,10 +123,18 @@ const Projects = () => {
               <ProjectTitle>{project.title}</ProjectTitle>
               <ProjectDescription>{project.description}</ProjectDescription>
               <ProjectButtons>
-                <PrimaryButton href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+                <PrimaryButton
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Live demo
                 </PrimaryButton>
-                <SecondaryButton href={project.codeUrl} target="_blank" rel="noopener noreferrer">
+                <SecondaryButton
+                  href={project.codeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   View Code
                 </SecondaryButton>
               </ProjectButtons>
@@ -116,7 +143,7 @@ const Projects = () => {
         ))}
       </ProjectsGrid>
     </ProjectsSection>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

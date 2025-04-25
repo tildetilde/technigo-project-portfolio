@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const ContactSection = styled.section`
-  padding: 60px 0;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
+  width: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     flex-direction: row;
@@ -14,12 +15,14 @@ const ContactSection = styled.section`
 
 const ProfileImageWrapper = styled.div`
   position: relative;
-  width: 200px;
-  height: 200px;
+  width: 433px;
+  height: 433px;
   margin: 0 auto 30px;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     margin: 0;
+    width: 433px;
+    height: 433px;
   }
 `;
 
@@ -37,25 +40,30 @@ const ContactContent = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     text-align: left;
     flex: 1;
-    margin-left: 40px;
+    margin-left: 80px;
   }
 `;
 
 const ContactTitle = styled.h2`
-  font-size: 32px;
+  font-size: clamp(60px, 6vw, 80px);
   font-weight: 700;
   margin-bottom: 16px;
 `;
 
 const ContactName = styled.h3`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 600;
   margin-bottom: 16px;
 `;
 
 const ContactInfo = styled.p`
-  font-size: 16px;
+  font-size: 24px;
   margin-bottom: 8px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.primary};
+  }
 `;
 
 const SocialIcons = styled.div`
@@ -72,10 +80,21 @@ const SocialIcons = styled.div`
 const SocialIcon = styled.a`
   color: ${(props) => props.theme.colors.primary};
   font-size: 20px;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 
   &:hover {
-    opacity: 0.8;
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.primary};
+    outline-offset: 2px;
   }
 `;
 

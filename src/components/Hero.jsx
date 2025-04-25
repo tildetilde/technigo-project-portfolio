@@ -5,18 +5,24 @@ const HeroSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 60px 0;
+  width: 100%;
+  justify-content: center;
+
+  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
+    min-height: 80vh;
+  }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 80px;
     padding: 80px 0;
   }
 `;
 
 const HeroContent = styled.div`
   margin-bottom: 30px;
+  width: 100%;
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex: 1;
@@ -26,49 +32,80 @@ const HeroContent = styled.div`
 `;
 
 const HeroName = styled.p`
-  font-size: 24px;
+  font-size: clamp(1rem, 4vw, 1.5rem);
   margin-bottom: 8px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.2s;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
-    font-size: 30px;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 `;
 
 const HeroTitle = styled.h1`
   font-family: ${(props) => props.theme.fonts.heading};
-  font-size: 60px;
+  font-size: clamp(60px, 30vw, 100px);
   font-weight: 700;
   margin-bottom: 16px;
   line-height: 1;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.4s;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     font-size: 80px;
   }
 
-  @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
+  @media (min-width: 1440px) {
     font-size: 100px;
   }
 `;
 
 const HeroDescription = styled.p`
-  font-size: 16px;
+  font-size: clamp(0.875rem, 3vw, 1rem);
   color: ${(props) => props.theme.colors.lightText};
   margin-bottom: 24px;
   max-width: 500px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.6s;
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   gap: 16px;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 0.8s;
 `;
 
 const SocialIcon = styled.a`
   color: ${(props) => props.theme.colors.primary};
   font-size: 20px;
-  transition: opacity 0.2s ease;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 
   &:hover {
-    opacity: 0.8;
+    background-color: rgba(255, 107, 0, 0.1);
+    transform: translateY(-3px);
+  }
+
+  &:focus-visible {
+    outline: 2px solid ${(props) => props.theme.colors.primary};
+    outline-offset: 2px;
   }
 `;
 
@@ -78,9 +115,13 @@ const ProfileImageWrapper = styled.div`
   height: 433px;
   flex: 0 0 auto;
   margin: 0 auto;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 1s;
 
-  @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    margin: 0;
+  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
+    width: 433px;
+    height: 433px;
   }
 `;
 

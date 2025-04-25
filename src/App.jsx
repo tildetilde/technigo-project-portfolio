@@ -1,3 +1,5 @@
+"use client";
+
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./GlobalStyle";
 import { theme } from "./theme";
@@ -8,8 +10,22 @@ import Projects from "./components/Projects";
 // import Journey from "./components/Journey";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
+import { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
+  useEffect(() => {
+    try {
+      AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+      });
+    } catch (error) {
+      console.error("Error initializing AOS", error);
+    }
+  }, []);
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
@@ -19,6 +35,7 @@ function App() {
         <Projects />
         {/* <Tech /> */}
         {/* <Journey /> */}
+main
         <Contact />
       </Layout>
     </ThemeProvider>
