@@ -4,8 +4,8 @@ import { theme } from "./theme";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-import Tech from "./components/Tech";
-import Journey from "./components/Journey";
+// import Tech from "./components/Tech";
+// import Journey from "./components/Journey";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
 
@@ -17,8 +17,8 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
-        <Tech />
-        <Journey />
+        {/* <Tech /> */}
+        {/* <Journey /> */}
         <Contact />
       </Layout>
     </ThemeProvider>
