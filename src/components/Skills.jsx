@@ -52,6 +52,16 @@ const SkillCategory = styled.div`
 
     &:last-child {
       border-bottom: none;
+      &:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 200px;
+        height: 2px;
+        background-color: ${(props) => props.theme.colors.primary};
+      }
     }
   }
 `;
