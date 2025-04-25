@@ -33,8 +33,9 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
-        {/* <Tech />
-        <Journey /> */}
+        {/* <Tech /> */}
+        {/* <Journey /> */}
+main
         <Contact />
       </Layout>
     </ThemeProvider>
