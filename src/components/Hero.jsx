@@ -4,19 +4,26 @@ const HeroSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 0;
+  padding: 80px 16px;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   justify-content: center;
+  overflow-x: visible;
+  position: relative;
+  z-index: 1;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     min-height: 80vh;
+    flex-direction: row;
+    padding: 100px 32px;
   }
 
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding: 80px 0;
+    padding: 120px 32px;
   }
 `;
 
@@ -27,7 +34,7 @@ const HeroContent = styled.div`
   @media (min-width: ${(props) => props.theme.breakpoints.desktop}) {
     flex: 1;
     margin-bottom: 0;
-    margin-right: 40px;
+    max-width: 100%;
   }
 `;
 
@@ -52,20 +59,20 @@ const HeroName = styled.p`
 
 const HeroTitle = styled.h1`
   font-family: ${(props) => props.theme.fonts.heading};
-  font-size: clamp(60px, 30vw, 100px);
+  font-size: clamp(2.5rem, 8vw, 6rem);
   font-weight: 700;
   margin-bottom: 16px;
-  line-height: 1;
+  line-height: 1.1;
   opacity: 0;
   animation: fadeIn 0.8s ease forwards;
   animation-delay: 0.4s;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
-    font-size: 80px;
+    font-size: 4rem;
   }
 
   @media (min-width: 1440px) {
-    font-size: 100px;
+    font-size: 5rem;
   }
 `;
 
@@ -111,18 +118,16 @@ const SocialIcon = styled.a`
 
 const ProfileImageWrapper = styled.div`
   position: relative;
-  width: 433px;
-  height: 433px;
+  width: 80vw; /* Anpassar till skärmen */
+  max-width: 433px;
+  aspect-ratio: 1 / 1;
   flex: 0 0 auto;
-  margin: 0 auto;
-  opacity: 0;
+  margin: 40px 0 0;
   animation: fadeIn 0.8s ease forwards;
-  animation-delay: 1s;
-
-  @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
-    width: 433px;
-    height: 433px;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 `;
 
 const ProfileImage = styled.img`
@@ -135,10 +140,10 @@ const ProfileImage = styled.img`
 
 const CircleOutline = styled.div`
   position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
   border: 2px solid ${(props) => props.theme.colors.primary};
   border-radius: 50%;
   z-index: -1;
@@ -148,7 +153,7 @@ const Hero = () => {
   return (
     <HeroSection>
       <HeroContent>
-        <HeroName>This is Tilde Egebrand</HeroName>
+        <HeroName>This is Tilde Egebrand,</HeroName>
         <HeroTitle>Frontend Developer</HeroTitle>
         <HeroDescription>
           Tilde is not very skilled yet, but shaping fast. She's driven by
@@ -156,10 +161,20 @@ const Hero = () => {
           learning to ask better questions. That’s a start.
         </HeroDescription>
         <SocialIcons>
-          <SocialIcon href="#" aria-label="LinkedIn">
+          <SocialIcon
+            href="https://www.linkedin.com/in/tilde-egebrand/"
+            aria-label="LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-linkedin-in"></i>
           </SocialIcon>
-          <SocialIcon href="#" aria-label="GitHub">
+          <SocialIcon
+            href="https://github.com/tildetilde"
+            aria-label="GitHub"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <i className="fab fa-github"></i>
           </SocialIcon>
         </SocialIcons>

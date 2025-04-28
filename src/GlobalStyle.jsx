@@ -16,7 +16,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: ${(props) => props.theme.fonts.body};
     line-height: 1.5;
     color: ${(props) => props.theme.colors.text};
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -46,13 +46,13 @@ const GlobalStyle = createGlobalStyle`
     font-family: inherit;
   }
     
-    /* Accessibility focus styles */
+
   :focus {
     outline: 2px solid ${(props) => props.theme.colors.primary};
     outline-offset: 2px;
   }
 
-  /* For screen readers only */
+
   .sr-only {
     position: absolute;
     width: 1px;
@@ -65,12 +65,12 @@ const GlobalStyle = createGlobalStyle`
     border-width: 0;
   }
 
-  /* Smooth scrolling for anchor links */
+
   html {
     scroll-padding-top: 80px; /* Adjust based on your header height */
   }
 
-  /* Improve text readability */
+
   p {
     max-width: 70ch;
   }

@@ -20,6 +20,7 @@ function App() {
       AOS.init({
         duration: 800,
         once: false,
+        easing: "ease-in-out",
         mirror: true,
       });
     } catch (error) {
@@ -33,9 +34,7 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
-        {/* <Tech /> */}
-        {/* <Journey /> */}
-main
+        main
         <Contact />
       </Layout>
     </ThemeProvider>

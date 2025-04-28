@@ -103,7 +103,7 @@ const Contact = () => {
     <ContactSection id="contact">
       <ProfileImageWrapper>
         <ProfileImage
-          src="/tildeprofile.jpg?height=200&width=200"
+          src="/tilde2.png?height=200&width=200"
           alt="Tilde Egebrand"
         />
       </ProfileImageWrapper>
