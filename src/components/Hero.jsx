@@ -106,7 +106,6 @@ const SocialIcon = styled.a`
   border-radius: 50%;
 
   &:hover {
-    background-color: rgba(255, 107, 0, 0.1);
     transform: translateY(-3px);
   }
 
@@ -182,7 +181,7 @@ const Hero = () => {
       <ProfileImageWrapper>
         <ProfileImage
           src="/tildeprofile.jpg?height=300&width=300"
-          alt="Sara Svensson"
+          alt="Tilde Egebrand"
         />
         <CircleOutline />
       </ProfileImageWrapper>
