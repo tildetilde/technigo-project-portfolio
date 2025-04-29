@@ -127,6 +127,7 @@ const Projects = () => {
                   href={project.demoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`Live demo of ${project.title}`}
                 >
                   Live demo
                 </PrimaryButton>
@@ -134,6 +135,7 @@ const Projects = () => {
                   href={project.codeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={`View code of ${project.title}`}
                 >
                   View Code
                 </SecondaryButton>

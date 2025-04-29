@@ -86,7 +86,7 @@ const Layout = ({ children }) => {
         <Container>{children}</Container>
       </main>
       <ScrollToTopButton
-        visible={showScrollButton}
+        $visible={showScrollButton}
         onClick={scrollToTop}
         aria-label="Scroll to top"
       >
