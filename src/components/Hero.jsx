@@ -41,20 +41,6 @@ const HeroContent = styled.div`
 const HeroName = styled.p`
   font-size: clamp(1rem, 4vw, 1.5rem);
   margin-bottom: 8px;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.2s;
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 `;
 
 const HeroTitle = styled.h1`
@@ -63,9 +49,6 @@ const HeroTitle = styled.h1`
   font-weight: 700;
   margin-bottom: 16px;
   line-height: 1.1;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.4s;
 
   @media (min-width: ${(props) => props.theme.breakpoints.tablet}) {
     font-size: 4rem;
@@ -81,17 +64,11 @@ const HeroDescription = styled.p`
   color: ${(props) => props.theme.colors.lightText};
   margin-bottom: 24px;
   max-width: 500px;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.6s;
 `;
 
 const SocialIcons = styled.div`
   display: flex;
   gap: 16px;
-  opacity: 0;
-  animation: fadeIn 0.8s ease forwards;
-  animation-delay: 0.8s;
 `;
 
 const SocialIcon = styled.a`
@@ -150,7 +127,7 @@ const CircleOutline = styled.div`
 
 const Hero = () => {
   return (
-    <HeroSection>
+    <HeroSection id="hero" data-aos="fade-up" data-aos-duration="1000">
       <HeroContent>
         <HeroName>This is Tilde Egebrand,</HeroName>
         <HeroTitle>Frontend Developer</HeroTitle>

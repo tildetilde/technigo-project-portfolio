@@ -6,8 +6,6 @@ import { theme } from "./theme";
 import Hero from "./components/Hero";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
-// import Tech from "./components/Tech";
-// import Journey from "./components/Journey";
 import Contact from "./components/Contact";
 import Layout from "./components/Layout";
 import { useEffect } from "react";
@@ -22,6 +20,7 @@ function App() {
         once: false,
         easing: "ease-in-out",
         mirror: true,
+        offset: 100,
       });
     } catch (error) {
       console.error("Error initializing AOS", error);
@@ -34,7 +33,6 @@ function App() {
         <Hero />
         <Skills />
         <Projects />
-        main
         <Contact />
       </Layout>
     </ThemeProvider>

@@ -90,7 +90,7 @@ const Skills = () => {
   return (
     <SkillsSection id="skills">
       <SectionTitle>Skills</SectionTitle>
-      <SkillsGrid>
+      <SkillsGrid data-aos="fade-up" data-aos-duration="1000">
         {Object.entries(skills).map(([category, items]) => (
           <SkillCategory key={category}>
             <CategoryTitle>{category}</CategoryTitle>

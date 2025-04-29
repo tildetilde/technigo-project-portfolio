@@ -113,11 +113,16 @@ const SecondaryButton = styled(Button)`
 
 const Projects = () => {
   return (
-    <ProjectsSection id="projects">
+    <ProjectsSection id="projects" data-aos="fade-up" data-aos-duration="1000">
       <SectionTitle>Featured Projects</SectionTitle>
       <ProjectsGrid>
         {projects.map((project, index) => (
-          <ProjectCard key={index}>
+          <ProjectCard
+            key={index}
+            data-aos="fade-up"
+            data-aos-delay={index * 100}
+            data-aos-duration="800"
+          >
             <ProjectImage src={project.image} alt={project.title} />
             <ProjectContent>
               <ProjectTitle>{project.title}</ProjectTitle>

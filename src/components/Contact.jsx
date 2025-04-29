@@ -100,7 +100,7 @@ const SocialIcon = styled.a`
 
 const Contact = () => {
   return (
-    <ContactSection id="contact">
+    <ContactSection id="contact" data-aos="fade-up" data-aos-duration="1000">
       <ProfileImageWrapper>
         <ProfileImage
           src="/tilde2.png?height=200&width=200"
@@ -111,12 +111,17 @@ const Contact = () => {
         <ContactTitle>Let's talk</ContactTitle>
         <ContactName>Tilde Egebrand</ContactName>
         <ContactInfo>+46(0)762 81 58 26</ContactInfo>
-        <ContactInfo>tilde.egebrand@gmail.com</ContactInfo>
+        <ContactInfo>
+          <a href="mailto:tilde.egebrand@gmail.com">tilde.egebrand@gmail.com</a>
+        </ContactInfo>
         <SocialIcons>
-          <SocialIcon href="#" aria-label="LinkedIn">
+          <SocialIcon
+            href="https://www.linkedin.com/in/tilde-egebrand/"
+            aria-label="LinkedIn"
+          >
             <i className="fab fa-linkedin-in"></i>
           </SocialIcon>
-          <SocialIcon href="#" aria-label="GitHub">
+          <SocialIcon href="https://github.com/tildetilde" aria-label="GitHub">
             <i className="fab fa-github"></i>
           </SocialIcon>
         </SocialIcons>
